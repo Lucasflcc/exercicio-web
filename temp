@@ -1,0 +1,62 @@
+<html> 
+
+<body> 
+
+<form action="/action_page.php"> 
+
+  <input type="number" id="number" onchange="save()">
+  
+  <input type="button" value="Adicionar"> 
+  <input id="btAdicionar" type="button" onclick= value="Remover"> 
+  <input type="button" onclick= value="Limpar"> <br>
+  
+  <input type="radio" id="pilha" name="modo_armazenamento" value="Pilha">
+  <label for="pilha">Pilha</label>
+  
+  <input type="radio" id="fila" name="modo_armazenamento" value="Fila">
+  <label for="fila">Fila</label> <br>
+  
+  <script>
+  const btAdicionar = document.getElementById("btAdicionar");
+  
+  let i = 0;
+  
+  const npilha = [];
+  const nfila = [];
+  
+  function addpilha() {
+      var number;
+      npilha[i] = number;
+      i = i+1;      
+}
+
+  function addfila() {
+      var number;
+      nfila[i] = number;
+      i = i+1;
+}
+
+  function reset() {
+  let l1 = npilha.length;
+  let l2 = nfila.length;
+  
+    for(let j = 0; j < l1; j++){
+    delete npilha[j];
+}
+    for(let k = 0; k < l2; k++){
+    delete npilha[j];
+}
+
+btAdicionar.onclick = () => {
+
+}
+
+  </script>
+
+</form> 
+
+  
+
+</body> 
+
+</html> 
