@@ -1,0 +1,49 @@
+<html> 
+
+<body> 
+
+<form action="/action_page.php"> 
+
+  <input type="number" id="numero">
+  
+  <input id="btAdicionar" type="button" onclick="addfila()" value="Adicionar">
+  
+  <input id="btRemover" type="button" onclick="remove()" value="Remover">
+  
+  <input id="btLimpar" type="button" onclick="reset()" value="Limpar">
+  
+  
+  
+  <p id="array"></p>
+  
+  <script>
+  
+  const nfila = [];
+  var n = 5;
+  
+  function addfila() {
+      nfila.push(n);
+      n = n+1;
+      document.getElementById("array").innerHTML = nfila;
+  }
+  
+  function reset() {
+      nfila.shift();
+      document.getElementById("array").innerHTML = nfila;
+  }
+
+  function remove() {
+      nfila.shift();
+      document.getElementById("array").innerHTML = nfila;
+  }
+
+  
+  </script>
+
+</form> 
+
+  
+
+</body> 
+
+</html> 
