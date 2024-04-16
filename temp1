@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 
+
+<body> 
+
+<form action="/action_page.php"> 
+
+  <label for="name">Nome:</label><br>
+  <input type="text" id="name" name="name" required placeholder="digite aqui" size="25"><br>
+  
+  <label for="email">E-mail:</label><br>
+  <input type="text" id="email" name="email" required placeholder="digite aqui" size="25"><br>
+  
+  <label for="message">Mensagem:</label><br>
+  <input type="text" id="message" name="message" required placeholder="digite aqui" size="50"><br>
+  
+  <input id="btEnviar" type="button" onclick="addfila()" value="Enviar"><br>
+
+  <input type="text" id="texto" required placeholder="digite aqui">
+  
+  <input id="btAdicionar" type="button" onclick="addfila()" value="Adicionar">
+  
+  <input id="btRemover" type="button" onclick="removefila()" value="Remover">
+  
+
+  <p id="array"></p>
+
+  <script>
+  
+  const tfila = [];
+  const t = document.getElementById("texto");
+  
+  function addfila() {
+    if(t.value !== ""){
+      tfila.push(t.value);
+      document.getElementById("array").innerHTML = tfila;
+      t.value = "";
+      }
+  }
+  
+  function removefila() {
+      tfila.shift();
+      document.getElementById("array").innerHTML = tfila;
+  }
+
+  </script>
+
+</form> 
+
+</body> 
+
+</html> 
