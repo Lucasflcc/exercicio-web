@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html> 
-
-<body> 
-
-<form action="/action_page.php"> 
-
-  <label for="name">Nome:</label><br>
+<label for="name">Nome:</label><br>
   <input type="text" id="name" name="name" required placeholder="digite aqui" size="25"><br>
   
   <label for="email">E-mail:</label><br>
@@ -25,14 +18,14 @@
   
   function addfila() {
     if(m.value !== ""){
-      tfila.push(m.value);
+      mfila.push(m.value);
       document.getElementById("array").innerHTML = mfila;
       m.value = "";
       }
   }
   
   function removefila() {
-      tfila.shift();
+      mfila.shift();
       document.getElementById("array").innerHTML = mfila;
   }
 
