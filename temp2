@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html> 
+<html>
+<head>
+<title>Currículo+JogoSenha</title>
+</head>
+<body>
 
-<body> 
-
-<style>
-body {
-  background-image: url('https://www.backgroundsy.com/file/large/light-colorful-background.jpg');
-}
-</style>
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
 
 <form action="/action_page.php"> 
 
-  <input type="text" id="texto" required placeholder="digite aqui">
+  <input type="password" id="cod1" required placeholder="código aqui">
   
-  <input id="btAdicionar" type="button" onclick="addfila()" value="Adicionar">
+  <input id="btDefinir1" type="button" onclick="definir1()" value="Definir código1"><br><br>
   
-  <input id="btRemover" type="button" onclick="removefila()" value="Remover">
+  <input type="text" id="teste1" required placeholder="-----------------------------">
+  <input id="btDefinir1" type="button" onclick="tentativa1()" value="Tentativa de código1">
   
-  <input id="tcor" type="color">
-
+  
+  <p id="cod1"></p>
   <p id="array"></p>
 
   <script>
+  const c1total = [];
+  const c1 = document.getElementById("texto");
   
   const tfila = [];
   const t = document.getElementById("texto");
-  const c = document.getElementById("tcor");
+  
+  
+  function definir1() {
+    if(c1.value !== ""){
+      c1total.push(t.value);
+      document.getElementById("array").innerHTML = tfila;
+      t.value = "";
+      }
+  }
   
   function addfila() {
     if(t.value !== ""){
@@ -44,6 +54,6 @@ body {
 
 </form> 
 
-</body> 
+</body>
+</html>
 
-</html> 
