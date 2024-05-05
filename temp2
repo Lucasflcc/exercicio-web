@@ -10,46 +10,50 @@
 
 <form action="/action_page.php"> 
 
-  <input type="password" id="cod1" required placeholder="código aqui">
-  
+  <input type="password" id="cod1" required placeholder="código aqui" maxlength="4"> 
   <input id="btDefinir1" type="button" onclick="definir1()" value="Definir código1"><br><br>
   
-  <input type="text" id="teste1" required placeholder="-----------------------------">
+  <input type="text" id="teste1" required placeholder="-----------------------------" maxlength="4">
   <input id="btDefinir1" type="button" onclick="tentativa1()" value="Tentativa de código1">
   
-  
-  <p id="cod1"></p>
   <p id="array"></p>
 
   <script>
-  const c1total = [];
-  const c1 = document.getElementById("texto");
-  
-  const tfila = [];
-  const t = document.getElementById("texto");
-  
-  
+  let c1 = document.getElementById("cod1");
+  let c1a;
+  let c1b;
+  let c1c;
+  let c1d;
+  let c1temp;
+  let c1tent = [];
+  const bull;
+  const cow;
+  const resultado;
+ 
   function definir1() {
-    if(c1.value !== ""){
-      c1total.push(t.value);
-      document.getElementById("array").innerHTML = tfila;
-      t.value = "";
+    if(c1.length == 4){
+    c1a = c1.charAt(0);
+    c1b = c1.charAt(1);
+    c1c = c1.charAt(2);
+    c1d = c1.charAt(3);
       }
   }
   
-  function addfila() {
-    if(t.value !== ""){
-      tfila.push(t.value);
-      document.getElementById("array").innerHTML = tfila;
-      t.value = "";
-      }
-  }
-  
-  function removefila() {
-      tfila.shift();
-      document.getElementById("array").innerHTML = tfila;
-  }
+  function tentativa1() {
+  bull = 0;
+  cow = 0;
 
+  c1temp = document.getElementById("teste1");
+  c1tent.push(c1temp.value);
+  if(c1temp !== c1){
+  if(c1temp.charAt(0) == c1a){bull++;}
+  if(c1temp.charAt(1) == c1b){bull++;}
+  if(c1temp.charAt(2) == c1c){bull++;}
+  if(c1temp.charAt(3) == c1d){bull++;}
+  document.getElementById("array").innerHTML = c1tent;
+  }
+  }
+  
   </script>
 
 </form> 
