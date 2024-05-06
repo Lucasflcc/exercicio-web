@@ -1,63 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Currículo+JogoSenha</title>
-</head>
-<body>
+<html> 
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<head><title>manipulação de arrays</title> </head>
+  
+<body> 
 
 <form action="/action_page.php"> 
 
-  <input type="password" id="cod1" required placeholder="código aqui" maxlength="4"> 
-  <input id="btDefinir1" type="button" onclick="definir1()" value="Definir código1"><br><br>
+  <input type="password" id="cod1" required placeholder="digite aqui" maxlength=4>
+  <input id="btDefinir1" type="button" onclick="defcod1()" value="Definir1"> <br>
   
-  <input type="text" id="teste1" required placeholder="-----------------------------" maxlength="4">
-  <input id="btDefinir1" type="button" onclick="tentativa1()" value="Tentativa de código1">
+  <input type="password" id="teste1" required placeholder="digite aqui" maxlength=4>
+  <input id="btTestar1" type="button" onclick="testar1()" value="Testar1"> <br>
   
+
   <p id="array"></p>
+  <p id="codigo1"></p>
+  <p id="temp1"></p>
 
   <script>
-  let c1 = document.getElementById("cod1");
-  let c1a;
-  let c1b;
-  let c1c;
-  let c1d;
-  let c1temp;
-  let c1tent = [];
-  const bull;
-  const cow;
-  const resultado;
- 
-  function definir1() {
-    if(c1.length == 4){
-    c1a = c1.charAt(0);
-    c1b = c1.charAt(1);
-    c1c = c1.charAt(2);
-    c1d = c1.charAt(3);
+  
+  const tfila = [];
+  const c1fila = [];
+  const t = document.getElementById("teste1");
+  const c1 = document.getElementById("cod1");
+  let tentativas = 0;
+  
+  
+  function defcod1() {
+  if(c1fila[0] !== ""){
+      c1fila.shift();
+      }
+      c1fila.push(c1.value);
+      document.getElementById("codigo1").innerHTML = c1fila + " = código1";
+  }
+  
+  function testar11() {
+      tentativas = tentativas + 1;
+      document.getElementById("temp1").innerHTML = " tentativa " + tentativas +"= " + t.value + "  ";
+      tfila.push(document.getElementById("temp1").innerHTML);
+      document.getElementById("array").innerHTML = tfila;  
+      t.value = "";
+  }
+  
+  function testar1() {
+  let bulls =0;
+  let cows = 0;
+  if(){}
+  
+      tentativas = tentativas + 1;
+      document.getElementById("temp1").innerHTML = " tentativa " + tentativas +"= " + t.value + "  ";
+      tfila.push(document.getElementById("temp1").innerHTML);
+      document.getElementById("array").innerHTML = tfila;  
+      t.value = "";
+  }
+  
+  function addfila() {
+    if(t.value !== ""){
+      tfila.push(t.value);
+      document.getElementById("array").innerHTML = tfila;
+      t.value = "";
       }
   }
   
-  function tentativa1() {
-  bull = 0;
-  cow = 0;
+  function removefila() {
+      tfila.shift();
+      document.getElementById("array").innerHTML = tfila;
+  }
 
-  c1temp = document.getElementById("teste1");
-  c1tent.push(c1temp.value);
-  if(c1temp !== c1){
-  if(c1temp.charAt(0) == c1a){bull++;}
-  if(c1temp.charAt(1) == c1b){bull++;}
-  if(c1temp.charAt(2) == c1c){bull++;}
-  if(c1temp.charAt(3) == c1d){bull++;}
-  document.getElementById("array").innerHTML = c1tent;
-  }
-  }
-  
   </script>
 
 </form> 
 
-</body>
-</html>
+</body> 
+
+</html> 
 
