@@ -42,14 +42,76 @@
       document.getElementById("array").innerHTML = tfila;  
       t.value = "";
   }
-  
+  //-------------------------
   function testar1() {
   let bulls =0;
   let cows = 0;
-  if(){}
+  let t1 = t.value;
+  let c1a = c1.value;
+  //----------------------------------
+  if(t1.charAt(0) == c1a.charAt(0)){
+  bulls = bulls + 1;
+  }
+  else{
+  if(t1.charAt(1) == c1a.charAt(0)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(2) == c1a.charAt(0)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(3) == c1a.charAt(0)){
+  cows = cows + 1;
+  }
+  }
+  //---------------------------------
+  if(t1.charAt(1) == c1a.charAt(1)){
+  bulls = bulls + 1;
+  }
+  else{
+  if(t1.charAt(0) == c1a.charAt(1)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(2) == c1a.charAt(1)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(3) == c1a.charAt(1)){
+  cows = cows + 1;
+  }
+  }
+  //---------------------------------
+  if(t1.charAt(2) == c1a.charAt(2)){
+  bulls = bulls + 1;
+  }
+  else{
+  if(t1.charAt(0) == c1a.charAt(2)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(1) == c1a.charAt(2)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(3) == c1a.charAt(2)){
+  cows = cows + 1;
+  }
+  }
+  //---------------------------------
+  if(t1.charAt(3) == c1a.charAt(3)){
+  bulls = bulls + 1;
+  }
+  else{
+  if(t1.charAt(0) == c1a.charAt(3)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(1) == c1a.charAt(3)){
+  cows = cows + 1;
+  }
+  if(t1.charAt(2) == c1a.charAt(3)){
+  cows = cows + 1;
+  }
+  }
+  //---------------------------------//
   
       tentativas = tentativas + 1;
-      document.getElementById("temp1").innerHTML = " tentativa " + tentativas +"= " + t.value + "  ";
+      document.getElementById("temp1").innerHTML = " tentativa " + tentativas +"= " + t.value + "  " + bulls + "B" + cows + "C";
       tfila.push(document.getElementById("temp1").innerHTML);
       document.getElementById("array").innerHTML = tfila;  
       t.value = "";
@@ -75,4 +137,3 @@
 </body> 
 
 </html> 
-
